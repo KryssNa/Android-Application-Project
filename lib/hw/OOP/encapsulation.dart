@@ -1,28 +1,32 @@
   //Encapsulation is the bundling of attributes and methods that operate on the data into a single unit called a class. 
   //It restricts direct access to some of an object's components, which helps prevent accidental or unauthorized modifications.
  
+class Employee {
+  // Private properties
+  int? _id;
+  String? _name;
 
-class Circle {
-  double? _radius; 
-
-  // Getter
-  double get radius => _radius!;
-
-  // Setter
-  set radius(double value) {
-    if (value > 0) {
-      _radius = value;
-    }
+  int getId() {
+    return _id!;
   }
-
-  double calculateArea() {
-    return 3.14 * _radius! * _radius!;
+  String getName() {
+    return _name!;
   }
+  void setId(int id) {
+    this._id = id;
+  }
+  void setName(String name) {
+    this._name = name;
+  }
+  
 }
 
 void main() {
-  var circle = Circle();
-  circle.radius = 5.0; 
-  print('Radius: ${circle.radius}'); 
-  print('Area: ${circle.calculateArea()}');
+
+  Employee emp =  Employee();
+  emp.setId(1);
+  emp.setName("John");
+
+  print("Id: ${emp.getId()}");
+  print("Name: ${emp.getName()}");
 }

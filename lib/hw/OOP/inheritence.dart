@@ -1,19 +1,30 @@
 //Inheritance allows a class to inherit properties and methods from another class. The extends keyword is used for inheritance.
+class Person {
+  String? name;
+  int? age;
 
-class Animal {
-  void eat() {
-    print('Animal is eating.');
+  void display() {
+    print("Name: $name");
+    print("Age: $age");
   }
 }
 
-class Dog extends Animal {
-  void bark() {
-    print('Dog is barking.');
+class Student extends Person {
+  String? schoolName;
+  String? schoolAddress;
+
+  void displaySchoolInfo() {
+    print("School Name: $schoolName");
+    print("School Address: $schoolAddress");
   }
 }
 
 void main() {
-  var dog = Dog();
-  dog.eat();  // Animal is eating.
-  dog.bark(); // Dog is barking.
+  var student = Student();
+  student.name = "John";
+  student.age = 20;
+  student.schoolName = "ABC School";
+  student.schoolAddress = "New York";
+  student.display();
+  student.displaySchoolInfo();
 }
